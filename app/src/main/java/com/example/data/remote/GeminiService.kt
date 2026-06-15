@@ -49,7 +49,7 @@ interface GeminiApi {
     @POST("v1beta/models/{model}:generateContent")
     suspend fun generateContent(
         @Path("model") model: String,
-        @Query("key") apiKey: String,
+        @retrofit2.http.Header("x-goog-api-key") apiKey: String,
         @Body request: GeminiRequest
     ): GeminiResponse
 }
@@ -59,7 +59,8 @@ object GeminiService {
 
     private val client: OkHttpClient by lazy {
         val logger = HttpLoggingInterceptor().apply {
-            level = HttpLoggingInterceptor.Level.BODY
+            level = if (BuildConfig.DEBUG) HttpLoggingInterceptor.Level.BODY else HttpLoggingInterceptor.Level.NONE
+            redactHeader("x-goog-api-key")
         }
         OkHttpClient.Builder()
             .addInterceptor(logger)

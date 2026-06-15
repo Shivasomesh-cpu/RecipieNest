@@ -321,7 +321,7 @@ fun DetailScreen(
 
                         // Gemini AI Kitchen Hub Section
                         item {
-                            GeminiAiKitchenHubSection(meal = meal)
+                            GeminiAiKitchenHubSection(meal = meal, viewModel = viewModel)
                         }
 
                         // 3. Ingredients Section Header
@@ -564,25 +564,25 @@ private fun parseBoldText(text: String): androidx.compose.ui.text.AnnotatedStrin
 @Composable
 fun GeminiAiKitchenHubSection(
     meal: Meal,
+    viewModel: MealViewModel,
     modifier: Modifier = Modifier
 ) {
-    val coroutineScope = rememberCoroutineScope()
     var selectedTab by remember { mutableStateOf("Tweaks") }
 
     // State managers
-    var tweakPref by remember { mutableStateOf("") }
-    var tweakResult by remember { mutableStateOf("") }
-    var isTweakLoading by remember { mutableStateOf(false) }
+    val tweakPref by viewModel.tweakPref.collectAsStateWithLifecycle()
+    val tweakResult by viewModel.tweakResult.collectAsStateWithLifecycle()
+    val isTweakLoading by viewModel.isTweakLoading.collectAsStateWithLifecycle()
 
-    var subsResult by remember { mutableStateOf("") }
-    var isSubsLoading by remember { mutableStateOf(false) }
+    val subsResult by viewModel.subsResult.collectAsStateWithLifecycle()
+    val isSubsLoading by viewModel.isSubsLoading.collectAsStateWithLifecycle()
 
-    var nutritionResult by remember { mutableStateOf("") }
-    var isNutritionLoading by remember { mutableStateOf(false) }
+    val nutritionResult by viewModel.nutritionResult.collectAsStateWithLifecycle()
+    val isNutritionLoading by viewModel.isNutritionLoading.collectAsStateWithLifecycle()
 
-    var chefQuestion by remember { mutableStateOf("") }
-    var chefResponse by remember { mutableStateOf("") }
-    var isChefLoading by remember { mutableStateOf(false) }
+    val chefQuestion by viewModel.chefQuestion.collectAsStateWithLifecycle()
+    val chefResponse by viewModel.chefResponse.collectAsStateWithLifecycle()
+    val isChefLoading by viewModel.isChefLoading.collectAsStateWithLifecycle()
 
     Card(
         modifier = modifier
@@ -718,16 +718,11 @@ fun GeminiAiKitchenHubSection(
                                     FilterChip(
                                         selected = tweakPref == cleanOption,
                                         onClick = {
-                                            tweakPref = cleanOption
-                                            isTweakLoading = true
-                                            coroutineScope.launch {
-                                                tweakResult = com.example.data.remote.GeminiService.getRecipeTweak(
-                                                    mealName = meal.name,
-                                                    dietaryPreference = cleanOption,
-                                                    originalInstructions = meal.instructions
-                                                )
-                                                isTweakLoading = false
-                                            }
+                                            viewModel.getRecipeTweak(
+                                                mealName = meal.name,
+                                                dietaryPreference = cleanOption,
+                                                originalInstructions = meal.instructions
+                                            )
                                         },
                                         label = { Text(option) }
                                     )
@@ -776,11 +771,7 @@ fun GeminiAiKitchenHubSection(
 
                             Button(
                                 onClick = {
-                                    isSubsLoading = true
-                                    coroutineScope.launch {
-                                        subsResult = com.example.data.remote.GeminiService.getIngredientSubstitutes(meal.ingredients)
-                                        isSubsLoading = false
-                                    }
+                                    viewModel.getIngredientSubstitutes(meal.ingredients)
                                 },
                                 modifier = Modifier.align(Alignment.CenterHorizontally),
                                 colors = ButtonDefaults.buttonColors(
@@ -825,11 +816,7 @@ fun GeminiAiKitchenHubSection(
 
                             Button(
                                 onClick = {
-                                    isNutritionLoading = true
-                                    coroutineScope.launch {
-                                        nutritionResult = com.example.data.remote.GeminiService.getNutritionAnalysis(meal.name, meal.ingredients)
-                                        isNutritionLoading = false
-                                    }
+                                    viewModel.getNutritionAnalysis(meal.name, meal.ingredients)
                                 },
                                 modifier = Modifier.align(Alignment.CenterHorizontally),
                                 colors = ButtonDefaults.buttonColors(
@@ -874,7 +861,7 @@ fun GeminiAiKitchenHubSection(
 
                             OutlinedTextField(
                                 value = chefQuestion,
-                                onValueChange = { chefQuestion = it },
+                                onValueChange = { viewModel.updateChefQuestion(it) },
                                 placeholder = { Text("Can I prepare this in an air fryer?") },
                                 modifier = Modifier.fillMaxWidth(),
                                 shape = RoundedCornerShape(12.dp),
@@ -882,18 +869,12 @@ fun GeminiAiKitchenHubSection(
                                     IconButton(
                                         onClick = {
                                             if (chefQuestion.isNotBlank()) {
-                                                isChefLoading = true
-                                                val q = chefQuestion
-                                                chefQuestion = ""
-                                                coroutineScope.launch {
-                                                    chefResponse = com.example.data.remote.GeminiService.askChefAssistant(
-                                                        mealName = meal.name,
-                                                        question = q,
-                                                        ingredients = meal.ingredients,
-                                                        instructions = meal.instructions
-                                                    )
-                                                    isChefLoading = false
-                                                }
+                                                viewModel.askChefAssistant(
+                                                    mealName = meal.name,
+                                                    question = chefQuestion,
+                                                    ingredients = meal.ingredients,
+                                                    instructions = meal.instructions
+                                                )
                                             }
                                         },
                                         enabled = chefQuestion.isNotBlank() && !isChefLoading
