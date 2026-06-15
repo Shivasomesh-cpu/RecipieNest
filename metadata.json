@@ -1,0 +1,6 @@
+{
+  "name": "RecipeNest",
+  "description": "Discover food category recipes, search, view cooking steps, list ingredients, and save your favourite meals locally with Room database.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
