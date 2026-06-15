@@ -59,37 +59,6 @@ class MealViewModel(private val repository: MealRepository) : ViewModel() {
     private val _mealDetailStates = MutableStateFlow<Map<String, UiState<Meal>>>(emptyMap())
     val mealDetailStates: StateFlow<Map<String, UiState<Meal>>> = _mealDetailStates.asStateFlow()
 
-    // --- GEMINI AI ASSISTANT STATES ---
-    private val _tweakResult = MutableStateFlow("")
-    val tweakResult: StateFlow<String> = _tweakResult.asStateFlow()
-
-    private val _isTweakLoading = MutableStateFlow(false)
-    val isTweakLoading: StateFlow<Boolean> = _isTweakLoading.asStateFlow()
-
-    private val _tweakPref = MutableStateFlow("")
-    val tweakPref: StateFlow<String> = _tweakPref.asStateFlow()
-
-    private val _subsResult = MutableStateFlow("")
-    val subsResult: StateFlow<String> = _subsResult.asStateFlow()
-
-    private val _isSubsLoading = MutableStateFlow(false)
-    val isSubsLoading: StateFlow<Boolean> = _isSubsLoading.asStateFlow()
-
-    private val _nutritionResult = MutableStateFlow("")
-    val nutritionResult: StateFlow<String> = _nutritionResult.asStateFlow()
-
-    private val _isNutritionLoading = MutableStateFlow(false)
-    val isNutritionLoading: StateFlow<Boolean> = _isNutritionLoading.asStateFlow()
-
-    private val _chefQuestion = MutableStateFlow("")
-    val chefQuestion: StateFlow<String> = _chefQuestion.asStateFlow()
-
-    private val _chefResponse = MutableStateFlow("")
-    val chefResponse: StateFlow<String> = _chefResponse.asStateFlow()
-
-    private val _isChefLoading = MutableStateFlow(false)
-    val isChefLoading: StateFlow<Boolean> = _isChefLoading.asStateFlow()
-
     // --- FAVOURITES STATE ---
     val favoriteMeals: StateFlow<List<Meal>> = repository.getFavoriteMeals()
         .stateIn(
@@ -173,14 +142,7 @@ class MealViewModel(private val repository: MealRepository) : ViewModel() {
         }
     }
 
-    private var activeMealId: String? = null
-
     fun loadMealDetail(mealId: String, forceRefresh: Boolean = false) {
-        if (activeMealId != mealId) {
-            activeMealId = mealId
-            clearAiStates()
-        }
-
         val currentStates = _mealDetailStates.value
         if (currentStates[mealId] is UiState.Success && !forceRefresh) {
             // Already loaded, don't re-trigger loading
@@ -203,94 +165,6 @@ class MealViewModel(private val repository: MealRepository) : ViewModel() {
                 }
             }
         }
-    }
-
-    fun updateTweakPref(pref: String) {
-        _tweakPref.value = pref
-    }
-
-    fun updateChefQuestion(question: String) {
-        _chefQuestion.value = question
-    }
-
-    fun getRecipeTweak(mealName: String, originalInstructions: String, preference: String) {
-        _tweakPref.value = preference
-        _isTweakLoading.value = true
-        viewModelScope.launch {
-            try {
-                val result = com.example.data.remote.GeminiService.getRecipeTweak(
-                    mealName = mealName,
-                    dietaryPreference = preference,
-                    originalInstructions = originalInstructions
-                )
-                _tweakResult.value = result
-            } catch (e: Exception) {
-                _tweakResult.value = "Error: ${e.localizedMessage}"
-            } finally {
-                _isTweakLoading.value = false
-            }
-        }
-    }
-
-    fun getIngredientSubstitutes(ingredients: List<String>) {
-        _isSubsLoading.value = true
-        viewModelScope.launch {
-            try {
-                val result = com.example.data.remote.GeminiService.getIngredientSubstitutes(ingredients)
-                _subsResult.value = result
-            } catch (e: Exception) {
-                _subsResult.value = "Error: ${e.localizedMessage}"
-            } finally {
-                _isSubsLoading.value = false
-            }
-        }
-    }
-
-    fun getNutritionAnalysis(mealName: String, ingredients: List<String>) {
-        _isNutritionLoading.value = true
-        viewModelScope.launch {
-            try {
-                val result = com.example.data.remote.GeminiService.getNutritionAnalysis(mealName, ingredients)
-                _nutritionResult.value = result
-            } catch (e: Exception) {
-                _nutritionResult.value = "Error: ${e.localizedMessage}"
-            } finally {
-                _isNutritionLoading.value = false
-            }
-        }
-    }
-
-    fun askChefAssistant(mealName: String, question: String, ingredients: List<String>, instructions: String) {
-        _isChefLoading.value = true
-        _chefQuestion.value = "" // Clear input on submit
-        viewModelScope.launch {
-            try {
-                val result = com.example.data.remote.GeminiService.askChefAssistant(
-                    mealName = mealName,
-                    question = question,
-                    ingredients = ingredients,
-                    instructions = instructions
-                )
-                _chefResponse.value = result
-            } catch (e: Exception) {
-                _chefResponse.value = "Error: ${e.localizedMessage}"
-            } finally {
-                _isChefLoading.value = false
-            }
-        }
-    }
-
-    fun clearAiStates() {
-        _tweakResult.value = ""
-        _isTweakLoading.value = false
-        _tweakPref.value = ""
-        _subsResult.value = ""
-        _isSubsLoading.value = false
-        _nutritionResult.value = ""
-        _isNutritionLoading.value = false
-        _chefQuestion.value = ""
-        _chefResponse.value = ""
-        _isChefLoading.value = false
     }
 
     fun toggleFavorite(meal: Meal) {

@@ -1,6 +1,5 @@
 package com.example.data.remote
 
-import com.example.BuildConfig
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -31,7 +30,7 @@ interface TheMealDbApi {
 
         fun create(): TheMealDbApi {
             val logger = HttpLoggingInterceptor().apply {
-                level = if (BuildConfig.DEBUG) HttpLoggingInterceptor.Level.BODY else HttpLoggingInterceptor.Level.NONE
+                level = HttpLoggingInterceptor.Level.BODY
             }
 
             val client = OkHttpClient.Builder()
