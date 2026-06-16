@@ -182,7 +182,8 @@ RecipeNest maintains strict security measures around sensitive API credentials t
 <hr>
 
 <div class="feature">
- <img width="610" height="1356" alt="WhatsApp Image 2026-06-16 at 2 34 17 PM (1)" src="https://github.com/user-attachments/assets/7e7b513d-d429-4ae8-a9b2-695fdff7ac79" />
+ <img width="610" height="1356" alt="WhatsApp Image 2026-06-16 at 2 34 17 PM (1)" src="https://github.com/user-attachments/assets/2b02de04-7dd0-4b03-8ccd-8b075222a38a" />
+
   <div class="feature-text">
     <h2>📋 Step-by-Step Instructions</h2>
     <p>Cooking steps are numbered with <strong>orange badge circles</strong>, making it easy to follow along at a glance — no collapsing, no truncation.</p>
