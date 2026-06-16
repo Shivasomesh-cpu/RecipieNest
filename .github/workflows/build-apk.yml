@@ -22,23 +22,24 @@ jobs:
         java-version: '21'
         distribution: 'temurin'
 
-    - name: Setup Gradle
+    - name: Install Gradle
       uses: gradle/actions/setup-gradle@v4
       with:
         validate-wrappers: false
-        cache-read-only: true
-
-    - name: Fix corrupt Gradle wrapper JAR
-      run: |
-        curl -L "https://services.gradle.org/distributions/gradle-8.11.1-bin.zip" -o gradle-dist.zip
-        unzip -j gradle-dist.zip "gradle-8.11.1/lib/plugins/gradle-wrapper-*.jar" -d /tmp/
-        cp /tmp/gradle-wrapper-*.jar gradle/wrapper/gradle-wrapper.jar
+        cache-disabled: true
 
     - name: Generate Debug Keystore
       run: keytool -genkeypair -v -keystore debug.keystore -storepass android -keypass android -alias androiddebugkey -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Android Debug,O=Android,C=US"
 
     - name: Make gradlew executable
       run: chmod +x ./gradlew
+
+    - name: Reinstall Gradle Wrapper
+      run: |
+        rm -f gradle/wrapper/gradle-wrapper.jar
+        wget -q https://services.gradle.org/distributions/gradle-8.11.1-bin.zip -O /tmp/gradle.zip
+        unzip -q /tmp/gradle.zip -d /tmp/gradle-dist
+        cp /tmp/gradle-dist/gradle-8.11.1/lib/plugins/gradle-wrapper-*.jar gradle/wrapper/gradle-wrapper.jar
 
     - name: Build with Gradle
       run: ./gradlew assembleDebug
@@ -57,3 +58,4 @@ jobs:
         files: app/build/outputs/apk/debug/app-debug.apk
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
