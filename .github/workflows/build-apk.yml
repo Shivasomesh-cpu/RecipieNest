@@ -22,11 +22,11 @@ jobs:
         java-version: '21'
         distribution: 'temurin'
 
-    - name: Install Gradle 8.11.1
+    - name: Install Gradle 9.3.1
       run: |
-        wget -q https://services.gradle.org/distributions/gradle-8.11.1-bin.zip -O /tmp/gradle.zip
+        wget -q https://services.gradle.org/distributions/gradle-9.3.1-bin.zip -O /tmp/gradle.zip
         unzip -q /tmp/gradle.zip -d /tmp/
-        echo "/tmp/gradle-8.11.1/bin" >> $GITHUB_PATH
+        echo "/tmp/gradle-9.3.1/bin" >> $GITHUB_PATH
 
     - name: Generate Debug Keystore
       run: keytool -genkeypair -v -keystore debug.keystore -storepass android -keypass android -alias androiddebugkey -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Android Debug,O=Android,C=US"
