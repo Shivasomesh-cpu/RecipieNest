@@ -94,5 +94,161 @@ RecipeNest maintains strict security measures around sensitive API credentials t
 
 ---
 
-## 📸 Screenshots & Dynamic Demo
-*(Place high-resolution screenshots and animated GIFs of your user journeys here)*
+## 📸 Screenshots 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RecipeNest – App Screenshots</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 960px; margin: 0 auto; padding: 40px 24px; background: #fff; color: #1a1a1a; }
+  h1 { font-size: 28px; margin-bottom: 6px; }
+  .subtitle { color: #666; margin-bottom: 48px; font-size: 15px; }
+  .feature { display: flex; gap: 32px; align-items: flex-start; margin-bottom: 60px; }
+  .feature.reverse { flex-direction: row-reverse; }
+  .feature img { width: 200px; border-radius: 18px; box-shadow: 0 4px 20px rgba(0,0,0,0.15); flex-shrink: 0; }
+  .feature-text h2 { font-size: 20px; margin: 0 0 8px; }
+  .feature-text p { font-size: 14px; color: #444; line-height: 1.7; margin: 0 0 12px; }
+  .feature-text ul { margin: 0; padding-left: 18px; font-size: 14px; color: #444; line-height: 1.9; }
+  hr { border: none; border-top: 1px solid #eee; margin: 0 0 60px; }
+  @media (max-width: 600px) { .feature, .feature.reverse { flex-direction: column; } .feature img { width: 100%; max-width: 260px; } }
+</style>
+</head>
+<body>
+
+<h1>📱 RecipeNest</h1>
+<p class="subtitle">An AI-powered recipe app focused on Indian cuisine — with smart dietary filters, step-by-step instructions, and a Gemini-powered kitchen assistant.</p>
+
+<div class="feature">
+  <img src="WhatsApp_Image_2026-06-16_at_2_34_20_PM.jpeg" alt="Home Screen – Light Mode">
+  <div class="feature-text">
+    <h2>🏠 Home Screen</h2>
+    <p>The Explore tab greets users with a <strong>Meal of the Day</strong> card — a full-width food photo with cuisine tag and diet label. Below it, cuisine categories and the Indian Selection grid with calorie badges.</p>
+    <ul>
+      <li>Daily recipe recommendation with refresh button</li>
+      <li>Horizontal category chips: Indian, Beef, Chicken…</li>
+      <li>Diet filter row: All · Veg · Non-Veg · Vegan</li>
+      <li>Course filter: All Courses · Starters · Mains · Snacks</li>
+      <li>Recipe tiles showing difficulty and calorie count</li>
+    </ul>
+  </div>
+</div>
+<hr>
+
+<div class="feature reverse">
+  <img src="WhatsApp_Image_2026-06-16_at_2_34_20_PM__2_.jpeg" alt="Home Screen – Dark Mode">
+  <div class="feature-text">
+    <h2>🌙 Dark / Light Mode</h2>
+    <p>A toggle in the top-right corner switches between <strong>Light Mode</strong> and <strong>Dark Mode</strong>. The orange accent system is preserved in both themes.</p>
+    <ul>
+      <li>One-tap toggle with moon/sun icon</li>
+      <li>Consistent colour hierarchy across both themes</li>
+      <li>Dark mode uses deep charcoal backgrounds for comfortable night cooking</li>
+    </ul>
+  </div>
+</div>
+<hr>
+
+<div class="feature">
+  <img src="WhatsApp_Image_2026-06-16_at_2_34_19_PM.jpeg" alt="Recipe Detail Screen">
+  <div class="feature-text">
+    <h2>🍽️ Recipe Detail — Overview</h2>
+    <p>Tapping a recipe opens a detail screen with a <strong>hero food photo</strong>, nutrition summary, difficulty badge, category tags, and a YouTube link for video guidance.</p>
+    <ul>
+      <li>Estimated nutrition: Calories · Protein · Carbs · Fat</li>
+      <li>Difficulty level (Easy / Medium / Hard)</li>
+      <li>Category tags (e.g. Vegetarian · Indian · Breakfast)</li>
+      <li>Red "Watch on YouTube" CTA button</li>
+      <li>Floating orange heart button to save to Favourites</li>
+    </ul>
+  </div>
+</div>
+<hr>
+
+<div class="feature reverse">
+  <img src="WhatsApp_Image_2026-06-16_at_2_34_17_PM__2_.jpeg" alt="Ingredients Checklist">
+  <div class="feature-text">
+    <h2>✅ Ingredients Checklist</h2>
+    <p>Every ingredient is a <strong>tappable checklist row</strong> — name in white, quantity in orange — so you can track what you have while shopping or prepping.</p>
+    <ul>
+      <li>Circle checkbox per ingredient</li>
+      <li>Quantity highlighted in orange for quick scanning</li>
+      <li>Scrollable list for longer recipes</li>
+    </ul>
+  </div>
+</div>
+<hr>
+
+<div class="feature">
+  <img src="WhatsApp_Image_2026-06-16_at_2_34_16_PM.jpeg" alt="Step-by-Step Instructions">
+  <div class="feature-text">
+    <h2>📋 Step-by-Step Instructions</h2>
+    <p>Cooking steps are numbered with <strong>orange badge circles</strong>, making it easy to follow along at a glance — no collapsing, no truncation.</p>
+    <ul>
+      <li>Numbered steps with clear, plain-language directions</li>
+      <li>Generous line height for easy reading mid-cook</li>
+      <li>Continuous scroll — all steps visible</li>
+    </ul>
+  </div>
+</div>
+<hr>
+
+<div class="feature reverse">
+  <img src="WhatsApp_Image_2026-06-16_at_2_34_18_PM__1_.jpeg" alt="Gemini Kitchen Assistant – Tweak">
+  <div class="feature-text">
+    <h2>🤖 Gemini Kitchen Assistant — Tweak</h2>
+    <p>The AI panel offers three modes. <strong>Tweak</strong> adapts the recipe for a dietary style — select Vegetarian, Vegan, or Gluten-Free and steps rewrite instantly via Gemini Flash Lite.</p>
+    <ul>
+      <li>One-tap dietary adaptation</li>
+      <li>Low-latency responses (Flash Lite model)</li>
+      <li>Updates both ingredients and cooking steps</li>
+    </ul>
+  </div>
+</div>
+<hr>
+
+<div class="feature">
+  <img src="WhatsApp_Image_2026-06-16_at_2_34_18_PM.jpeg" alt="Gemini Kitchen Assistant – Substitutes">
+  <div class="feature-text">
+    <h2>🔄 Gemini Kitchen Assistant — Substitutes</h2>
+    <p>Missing an ingredient? The <strong>Substitutes</strong> tab finds professional replacements, categorised by type, with a reason for each swap.</p>
+    <ul>
+      <li>Grains & Legumes, Produce, Spices & Oils, Condiments</li>
+      <li>Each substitute includes a brief rationale</li>
+      <li>"Find Substitutes" button triggers an on-demand AI call</li>
+    </ul>
+  </div>
+</div>
+<hr>
+
+<div class="feature reverse">
+  <img src="WhatsApp_Image_2026-06-16_at_2_34_17_PM__1_.jpeg" alt="Gemini Kitchen Assistant – Nutrition">
+  <div class="feature-text">
+    <h2>🥗 Gemini Kitchen Assistant — Nutrition</h2>
+    <p>The <strong>Nutrition</strong> tab generates an AI dietitian's analysis: macro breakdown, a star health rating, anti-inflammatory notes, and practical tips for balancing the meal.</p>
+    <ul>
+      <li>Dietitian's Health Rating (e.g. 4/5 stars)</li>
+      <li>Gluten-free / vegan / probiotic flags</li>
+      <li>Tips like "pair with sambar for more protein"</li>
+      <li>Warnings on calorie-dense ingredients</li>
+    </ul>
+  </div>
+</div>
+<hr>
+
+<div class="feature">
+  <img src="WhatsApp_Image_2026-06-16_at_2_34_21_PM.jpeg" alt="Search Screen">
+  <div class="feature-text">
+    <h2>🔍 Search & Favourites</h2>
+    <p>The bottom navigation has three tabs: <strong>Explore</strong>, <strong>Search</strong>, and <strong>Favourites</strong>. Recipes saved with the floating heart button are collected in Favourites for quick re-access.</p>
+    <ul>
+      <li>Full-text search across the recipe library</li>
+      <li>Favourites persist across sessions</li>
+      <li>Floating orange heart on every recipe screen</li>
+    </ul>
+  </div>
+</div>
+
+</body>
+</html>
