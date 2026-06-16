@@ -39,7 +39,8 @@ jobs:
         rm -f gradle/wrapper/gradle-wrapper.jar
         wget -q https://services.gradle.org/distributions/gradle-8.11.1-bin.zip -O /tmp/gradle.zip
         unzip -q /tmp/gradle.zip -d /tmp/gradle-dist
-        cp /tmp/gradle-dist/gradle-8.11.1/lib/plugins/gradle-wrapper-*.jar gradle/wrapper/gradle-wrapper.jar
+        find /tmp/gradle-dist -name "gradle-wrapper.jar" | head -1 | xargs -I{} cp {} gradle/wrapper/gradle-wrapper.jar
+        echo "JAR size: $(stat -c%s gradle/wrapper/gradle-wrapper.jar) bytes"
 
     - name: Build with Gradle
       run: ./gradlew assembleDebug
