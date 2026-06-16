@@ -30,8 +30,9 @@ jobs:
 
     - name: Fix corrupt Gradle wrapper JAR
       run: |
-        curl -L "https://github.com/gradle/gradle/raw/v8.11.1/gradle/wrapper/gradle-wrapper.jar" \
-          -o gradle/wrapper/gradle-wrapper.jar
+        curl -L "https://services.gradle.org/distributions/gradle-8.11.1-bin.zip" -o gradle-dist.zip
+        unzip -j gradle-dist.zip "gradle-8.11.1/lib/plugins/gradle-wrapper-*.jar" -d /tmp/
+        cp /tmp/gradle-wrapper-*.jar gradle/wrapper/gradle-wrapper.jar
 
     - name: Generate Debug Keystore
       run: keytool -genkeypair -v -keystore debug.keystore -storepass android -keypass android -alias androiddebugkey -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Android Debug,O=Android,C=US"
