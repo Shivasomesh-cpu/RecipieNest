@@ -121,7 +121,7 @@ RecipeNest maintains strict security measures around sensitive API credentials t
 <p class="subtitle">An AI-powered recipe app focused on Indian cuisine — with smart dietary filters, step-by-step instructions, and a Gemini-powered kitchen assistant.</p>
 
 <div class="feature">
-  <img src="WhatsApp_Image_2026-06-16_at_2_34_20_PM.jpeg" alt="Home Screen – Light Mode">
+  <img width="610" height="1356" alt="WhatsApp Image 2026-06-16 at 2 34 16 PM" src="https://github.com/user-attachments/assets/f0851fbc-25eb-4485-86c8-3fac1945ff34" />
   <div class="feature-text">
     <h2>🏠 Home Screen</h2>
     <p>The Explore tab greets users with a <strong>Meal of the Day</strong> card — a full-width food photo with cuisine tag and diet label. Below it, cuisine categories and the Indian Selection grid with calorie badges.</p>
@@ -137,7 +137,7 @@ RecipeNest maintains strict security measures around sensitive API credentials t
 <hr>
 
 <div class="feature reverse">
-  <img src="WhatsApp_Image_2026-06-16_at_2_34_20_PM__2_.jpeg" alt="Home Screen – Dark Mode">
+  <img width="610" height="1356" alt="WhatsApp Image 2026-06-16 at 2 34 19 PM (1)" src="https://github.com/user-attachments/assets/7f808128-8a6c-4390-ad1a-d137bd653ebd" />
   <div class="feature-text">
     <h2>🌙 Dark / Light Mode</h2>
     <p>A toggle in the top-right corner switches between <strong>Light Mode</strong> and <strong>Dark Mode</strong>. The orange accent system is preserved in both themes.</p>
@@ -151,7 +151,7 @@ RecipeNest maintains strict security measures around sensitive API credentials t
 <hr>
 
 <div class="feature">
-  <img src="WhatsApp_Image_2026-06-16_at_2_34_19_PM.jpeg" alt="Recipe Detail Screen">
+  <img width="610" height="1356" alt="WhatsApp Image 2026-06-16 at 2 34 19 PM" src="https://github.com/user-attachments/assets/0453f82e-f103-4b5c-986f-e93e99e8b4e6" />
   <div class="feature-text">
     <h2>🍽️ Recipe Detail — Overview</h2>
     <p>Tapping a recipe opens a detail screen with a <strong>hero food photo</strong>, nutrition summary, difficulty badge, category tags, and a YouTube link for video guidance.</p>
@@ -167,7 +167,8 @@ RecipeNest maintains strict security measures around sensitive API credentials t
 <hr>
 
 <div class="feature reverse">
-  <img src="WhatsApp_Image_2026-06-16_at_2_34_17_PM__2_.jpeg" alt="Ingredients Checklist">
+  <img width="610" height="1356" alt="WhatsApp Image 2026-06-16 at 2 34 17 PM (2)" src="https://github.com/user-attachments/assets/cb069b10-ba36-4cee-a765-1b868e10e7f5" />
+
   <div class="feature-text">
     <h2>✅ Ingredients Checklist</h2>
     <p>Every ingredient is a <strong>tappable checklist row</strong> — name in white, quantity in orange — so you can track what you have while shopping or prepping.</p>
@@ -181,7 +182,7 @@ RecipeNest maintains strict security measures around sensitive API credentials t
 <hr>
 
 <div class="feature">
-  <img src="WhatsApp_Image_2026-06-16_at_2_34_16_PM.jpeg" alt="Step-by-Step Instructions">
+ <img width="610" height="1356" alt="WhatsApp Image 2026-06-16 at 2 34 17 PM (1)" src="https://github.com/user-attachments/assets/7e7b513d-d429-4ae8-a9b2-695fdff7ac79" />
   <div class="feature-text">
     <h2>📋 Step-by-Step Instructions</h2>
     <p>Cooking steps are numbered with <strong>orange badge circles</strong>, making it easy to follow along at a glance — no collapsing, no truncation.</p>
@@ -195,7 +196,8 @@ RecipeNest maintains strict security measures around sensitive API credentials t
 <hr>
 
 <div class="feature reverse">
-  <img src="WhatsApp_Image_2026-06-16_at_2_34_18_PM__1_.jpeg" alt="Gemini Kitchen Assistant – Tweak">
+  <img width="610" height="1356" alt="WhatsApp Image 2026-06-16 at 2 34 20 PM (1)" src="https://github.com/user-attachments/assets/8df895fa-f540-4cf6-b8bf-594f7cc62c78" />
+
   <div class="feature-text">
     <h2>🤖 Gemini Kitchen Assistant — Tweak</h2>
     <p>The AI panel offers three modes. <strong>Tweak</strong> adapts the recipe for a dietary style — select Vegetarian, Vegan, or Gluten-Free and steps rewrite instantly via Gemini Flash Lite.</p>
@@ -209,7 +211,8 @@ RecipeNest maintains strict security measures around sensitive API credentials t
 <hr>
 
 <div class="feature">
-  <img src="WhatsApp_Image_2026-06-16_at_2_34_18_PM.jpeg" alt="Gemini Kitchen Assistant – Substitutes">
+  <img width="610" height="1356" alt="WhatsApp Image 2026-06-16 at 2 34 18 PM (1)" src="https://github.com/user-attachments/assets/ec960e5e-3b81-4e03-8b2b-fc69b689bb05" />
+
   <div class="feature-text">
     <h2>🔄 Gemini Kitchen Assistant — Substitutes</h2>
     <p>Missing an ingredient? The <strong>Substitutes</strong> tab finds professional replacements, categorised by type, with a reason for each swap.</p>
@@ -223,7 +226,8 @@ RecipeNest maintains strict security measures around sensitive API credentials t
 <hr>
 
 <div class="feature reverse">
-  <img src="WhatsApp_Image_2026-06-16_at_2_34_17_PM__1_.jpeg" alt="Gemini Kitchen Assistant – Nutrition">
+    <img width="610" height="1356" alt="WhatsApp Image 2026-06-16 at 2 34 19 PM (1)" src="https://github.com/user-attachments/assets/3b8f93ed-3c96-4aff-8151-a5d910294475" />
+
   <div class="feature-text">
     <h2>🥗 Gemini Kitchen Assistant — Nutrition</h2>
     <p>The <strong>Nutrition</strong> tab generates an AI dietitian's analysis: macro breakdown, a star health rating, anti-inflammatory notes, and practical tips for balancing the meal.</p>
@@ -238,7 +242,8 @@ RecipeNest maintains strict security measures around sensitive API credentials t
 <hr>
 
 <div class="feature">
-  <img src="WhatsApp_Image_2026-06-16_at_2_34_21_PM.jpeg" alt="Search Screen">
+  <img width="333" height="747" alt="Screenshot 2026-06-16 121629" src="https://github.com/user-attachments/assets/9843ffd3-9ffd-42f0-8d7e-95e8cec01c75" />
+
   <div class="feature-text">
     <h2>🔍 Search & Favourites</h2>
     <p>The bottom navigation has three tabs: <strong>Explore</strong>, <strong>Search</strong>, and <strong>Favourites</strong>. Recipes saved with the floating heart button are collected in Favourites for quick re-access.</p>
