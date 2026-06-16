@@ -95,4 +95,12 @@ RecipeNest maintains strict security measures around sensitive API credentials t
 ---
 
 ## 📸 Screenshots & Dynamic Demo
-*(Place high-resolution screenshots and animated GIFs of your user journeys here)*
+<img width="380" height="862" alt="Screenshot 2026-06-15 201258" src="https://github.com/user-attachments/assets/779357ff-1e60-4202-b00f-48aebcb1db28" />
+<img width="333" height="747" alt="image" src="https://github.com/user-attachments/assets/5ef70f30-a34d-4e96-a82f-511a83c31b1e" />
+<img width="337" height="732" alt="image" src="https://github.com/user-attachments/assets/2954dcff-19d5-4e1c-997a-e04a561c1d87" />
+<img width="330" height="728" alt="image" src="https://github.com/user-attachments/assets/4082b5b8-a556-4f56-8f91-1f4e9da28665" />
+<img width="322" height="615" alt="image" src="https://github.com/user-attachments/assets/0a0b07d0-28a4-4171-93a2-33ebd2b200b6" />
+<img width="323" height="672" alt="image" src="https://github.com/user-attachments/assets/dd759c7e-133f-4c4e-af55-e4b94928c94e" />
+<img width="317" height="660" alt="image" src="https://github.com/user-attachments/assets/4f5e4de2-d585-496d-b65c-5428d13907ef" />
+
+
